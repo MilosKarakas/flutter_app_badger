@@ -30,7 +30,7 @@ public class FlutterAppBadgerPlugin implements MethodCallHandler, FlutterPlugin 
   }
 
   @Override
-  public void onDetachedFromEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
+  public void onDetachedFromEngine(FlutterPluginBinding flutterPluginBinding) {
     channel.setMethodCallHandler(null);
     applicationContext = null;
   }
