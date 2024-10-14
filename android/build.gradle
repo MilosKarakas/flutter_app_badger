@@ -8,7 +8,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath 'com.android.tools.build:gradle:7.3.1'
     }
 }
 
@@ -22,10 +22,10 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 34
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 21
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     lintOptions {
@@ -34,9 +34,15 @@ android {
     if (project.android.hasProperty('namespace')) {
         namespace 'fr.g123k.flutterappbadge.flutterappbadger'
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     //noinspection GradleDependency
     implementation "me.leolin:ShortcutBadger:1.1.22@aar"
+    implementation 'androidx.preference:preference:1.2.1'
 }
